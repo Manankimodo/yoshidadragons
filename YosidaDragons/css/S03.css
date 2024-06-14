@@ -1,0 +1,42 @@
+/* 
+    body
+*/
+
+.flex { /* 横並べ */
+    display: flex;
+}
+.flex div input { /* inputタグ設定 */
+    border: solid black;
+    width: 400px;
+    border-radius: 4px;
+    line-height: 20px;
+}
+.text { /* textサイズ設定 */
+    width: 200px;
+}
+.speace { /* 幅調整 */
+    margin-bottom: 40px;
+}
+#kensaku_button a:nth-child(2), #kensaku_button a:nth-child(3) { /* 入力消去と顧客管理情報ボタンの設定 */
+    margin-left: 50px;
+}
+#kensaku_button a { /* 検索ボタン設定 */
+    border:  solid black ;
+    padding: 5px 20px;
+    font-size: 18px;
+}
+
+div table { /* 表のサイズ設定 */
+    width: 600px;
+    border: solid black;
+}
+table tr th, tr td { /* 表のマス目表示 */
+    border: solid black;
+    text-align: center;
+}
+
+#back_button a { /* 戻るボタンの設定 */
+    border: solid black;
+    padding: 10px 20px;
+    font-size: 18px;
+}

@@ -1,0 +1,45 @@
+/* 
+    body
+*/
+
+.flex { /* 横並べ */
+    display: flex;
+}
+.text { /* textタグの幅設定 */
+    width: 200px;
+}
+.speace { /* スペースの設定 */
+    margin-bottom: 40px;
+}
+.flex div input { /* inputタグの設定 */
+    border: solid black;
+    width: 400px;
+    border-radius: 4px;
+    line-height: 20px;
+}
+#koudoku_button a:nth-child(2), #koudoku_button a:nth-child(3) { /* 64行目divタグの入力消去書・籍情報変更の設定 */
+    margin-left: 50px;
+}
+#koudoku_button a { /* 検索　入力消去　証跡情報変更の設定 */
+    border: solid black;
+    padding: 5px 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+div table { /* 表のサイズ設定 */
+    width: 600px;
+    border: solid black;
+}
+table tr th, tr td { /* 表のマス目表示 */
+    border: solid black;
+    text-align: center;
+}
+
+#back_button a { /* 戻るボタンの設定 */
+    border: solid black;
+    position: absolute;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 18px;
+}

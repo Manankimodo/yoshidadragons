@@ -1,0 +1,24 @@
+/* 
+    body
+*/
+
+.button_01 a { /* 顧客・書籍管理ボタンの設定 */
+    border: solid black ;
+    display: inline-block;
+    text-align: center;
+    width: 400px;
+    padding: 20px 0 20px 0;
+    font-size: 40px;
+}
+.button_01:nth-child(2) { /* 書籍管理ボタンの設定 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#button_NewUser a{ /* 新規登録ボタンの設定 */
+    border: solid black;
+    display: inline-block;
+    text-align: center;
+    width: 160px;
+    padding: 10px 0 10px 0;
+    font-size: 20px;
+}

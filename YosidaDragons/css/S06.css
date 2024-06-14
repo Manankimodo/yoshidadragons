@@ -1,0 +1,11 @@
+/* 
+    body
+*/
+/* S04.cssと同時に使用しています */
+
+#copy_button a {
+    border: solid black;
+    padding: 10px 20px;
+    margin-left: 50px;
+    font-size: 18px;
+}

@@ -1,0 +1,41 @@
+/* 
+    body
+*/
+
+.flex { /* 横並び */
+    display: flex;
+}
+.flex p { /* 幅設定 */
+    width: 200px;
+}
+.flex input { /* inputの設定 */
+    border: solid black;
+    width: 400px;
+    border-radius: 4px;
+    line-height: 20px;
+}
+div .speace { /* スペース設定 */
+    margin-bottom: 30px;
+}
+
+/* #back_button, #OK_button {
+    border: solid black;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+#OK_button {
+    margin-left: 450px;
+} */
+
+#back_button a { /* 戻るボタンの設定 */
+    border: solid black;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+#OK_button a { /* OKボタンの設定 */
+    border: solid black;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-left: 450px;
+}

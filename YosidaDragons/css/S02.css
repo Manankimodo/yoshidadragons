@@ -1,0 +1,26 @@
+/* 
+    body
+*/
+
+.flex { /* 要素の横並べ */
+    display: flex;
+}
+.text { /* テキストのサイズ */
+    width: 200px;
+}
+div form input { /* inputタグの設定 */
+    border: solid black;
+    width: 400px;
+    border-radius: 4px;
+    line-height: 20px;
+}
+.speace { /* スペースを開ける */
+    margin-bottom: 40px;
+}
+
+#touroku_button a{ /* 登録ボタンの設定 */
+    border: solid black;
+    margin-left: 500px;
+    padding: 10px 20px;
+    font-size: 15px;
+}
