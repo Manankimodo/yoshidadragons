@@ -21,17 +21,20 @@
 
         <pre>
         <?php
+        //S04からデータ取得
         $name = $_POST["name"];
         $kana = $_POST["kana"];
         $phonnumber = $_POST["phonnumber"];
         $address = $_POST["address"];
+        //日付取得
+        $today = date("Y/m/d");
 
         echo "<div class='flex speace'><p>ID</p><p>3</p></div>";
         echo "<div class='flex speace'><div><p>氏名</p></div><div><p>{$name}</p></div></div>";
         echo "<div class='flex speace'><div><p>カナ</p></div><div><p>{$kana}</p></div></div>";
         echo "<div class='flex speace'><div><p>電話番号</p></div><div><p>{$phonnumber}</p></div></div>";
         echo "<div class='flex speace'><div><p>住所</p></div><div><p>{$address}</p></div></div>";
-        echo "<div class='flex speace'><div><p>変更日</p></div><div><p>20xx/05/01</p></div></div>";
+        echo "<div class='flex speace'><div><p>変更日</p></div><div><p>{$today}</p></div></div>";
         ?>
         </pre>
 
