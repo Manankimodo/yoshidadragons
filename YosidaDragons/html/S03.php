@@ -53,7 +53,7 @@
         <div class="flex speace" id="kensaku_button">
             <a class="Button" href="">検索</a>
             <a class="Button" href="">入力消去</a>
-            <a class="Button" href="S04.html">顧客管理情報</a>
+            <a class="Button" href="S04.php">顧客管理情報</a>
         </div>
 
         <!-- テーブル -->
