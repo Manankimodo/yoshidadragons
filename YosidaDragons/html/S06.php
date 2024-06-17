@@ -83,7 +83,7 @@
         <div class="flex">
             <!-- 戻るボタン -->
             <div id="back_button">
-                <a class="Button" href="S04.html">戻る</a>
+                <a class="Button" href="S04.php">戻る</a>
             </div>
 
             <!-- 印刷ボタン -->

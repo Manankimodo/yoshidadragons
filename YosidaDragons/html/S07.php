@@ -64,7 +64,7 @@
         <div class="flex" id="koudoku_button">
             <a class="Button" href="">検索</a>
             <a class="Button" href="">入力消去</a>
-            <a class="Button" href="S08.html">書籍情報変更</a>
+            <a class="Button" href="S08.php">書籍情報変更</a>
         </div>
 
         <!-- テーブル -->
@@ -103,7 +103,7 @@
 
         <!-- 戻るボタン -->
         <div id="back_button">
-            <a class="Button" href="S01.html">戻る</a>
+            <a class="Button" href="S01.php">戻る</a>
         </div>
         
     </div>
