@@ -19,12 +19,12 @@
     margin-bottom: 30px;
 }
 
-#koudoku_button a { /* 購読ボタン類の設定 */
+#koudoku_button a , input{ /* 購読ボタン類の設定 */
     border:  solid black ;
     padding: 5px 20px;
     font-size: 18px;
 }
-#koudoku_button a:nth-child(2), #koudoku_button a:nth-child(3) { /* 購読解除　購読確認ボタンの設定 */
+#koudoku_button a:nth-child(2), #koudoku_button input { /* 購読解除　購読確認ボタンの設定 */
     margin-left: 50px;
 }
 
