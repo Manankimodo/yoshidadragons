@@ -25,64 +25,58 @@
             <p>3</p>
         </div>
 
-        <!-- 氏名 -->
-        <div class="flex speace">
-            <div>
-                <p>氏名</p>
+        <form method="post" action="S06.php">
+            <!-- 氏名 -->
+            <div class="flex speace">
+                <div>
+                    <p>氏名</p>
+                </div>
+                <div>
+                    <input value="山田太郎" type="text" name="name">
+                </div>
             </div>
-            <div>
-                <form action="">
-                    <input value="山田太郎" type="text">
-                </form>
-            </div>
-        </div>
 
-        <!-- カナ -->
-        <div class="flex speace">
-            <div>
-                <p>カナ</p>
+            <!-- カナ -->
+            <div class="flex speace">
+                <div>
+                    <p>カナ</p>
+                </div>
+                <div>
+                    <input value="ヤマダタロウ" type="text" name="kana">
+                </div>
             </div>
-            <div>
-                <form action="">
-                    <input value="ヤマダタロウ" type="text">
-                </form>
-            </div>
-        </div>
 
-        <!-- 電話番号 -->
-        <div class="flex speace">
-            <div>
-                <p>電話番号</p>
+            <!-- 電話番号 -->
+            <div class="flex speace">
+                <div>
+                    <p>電話番号</p>
+                </div>
+                <div>
+                    <input value="08012345678" type="text" name="phonnumber">
+                </div>
             </div>
-            <div>
-                <form action="">
-                    <input value="08012345678" type="text">
-                </form>
-            </div>
-        </div>
 
-        <!-- 住所 -->
-        <div class="flex speace">
-            <div>
-                <p>住所</p>
+            <!-- 住所 -->
+            <div class="flex speace">
+                <div>
+                    <p>住所</p>
+                </div>
+                <div>
+                    <input value="東京都新宿区×××××××××××" type="text" name="address">
+                </div>
             </div>
-            <div>
-                <form action="">
-                    <input value="東京都新宿区×××××××××××" type="text">
-                </form>
-            </div>
-        </div>
 
-        <!-- 
-            購読登録　
-            購読解除　
-            購読確認ボタン　→ S06(顧客情報確認)
-        -->
-        <div id="koudoku_button" class="flex speace">
-            <a id="Touroku_button" class="Button" >購読登録</a>
-            <a id="Kaijo_button" class="Button" >購読解除</a>
-            <input id="kakunin_button" type="submit" value="購読確認">
-        </div>
+            <!-- 
+                購読登録　
+                購読解除　
+                購読確認ボタン　→ S06(顧客情報確認)
+            -->
+            <div id="koudoku_button" class="flex speace">
+                <a id="Touroku_button" class="Button" >購読登録</a>
+                <a id="Kaijo_button" class="Button" >購読解除</a>
+                <input id="kakunin_button" type="submit" >
+            </div>
+        </form>
 
         <!-- テーブル -->
         <table class="speace">
