@@ -36,63 +36,6 @@
         </pre>
 
 
-        ID
-        <div class="flex speace">
-            <p>ID</p>
-            <p>3</p>
-        </div>
-
-        <!-- 氏名 -->
-        <div class="flex speace">
-            <div>
-                <p>氏名</p>
-            </div>
-            <div>
-                <p>山田太郎</p>
-            </div>
-        </div>
-
-        <!-- カナ -->
-        <div class="flex speace">
-            <div>
-                <p>カナ</p>
-            </div>
-            <div>
-                <p>ヤマダタロウ</p>
-            </div>
-        </div>
-
-        <!-- 電話番号 -->
-        <div class="flex speace">
-            <div>
-                <p>電話番号</p>
-            </div>
-            <div>
-                <p>08012345678</p>
-            </div>
-        </div>
-
-        <!-- 住所 -->
-        <div class="flex speace">
-            <div>
-                <p>住所</p>
-            </div>
-            <div>
-                <p>東京都新宿区×××××××××××</p>
-            </div>
-        </div>
-
-        <!-- 変更日 -->
-        <div class="flex speace">
-            <div>
-                <p>変更日</p>
-            </div>
-            <div>
-                <p>20xx/05/01</p>
-            </div>
-        </div>
-
-
         <!-- テーブル -->
         <table class="speace">
             <tr>

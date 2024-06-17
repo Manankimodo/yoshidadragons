@@ -27,6 +27,12 @@
 #koudoku_button a:nth-child(2), #koudoku_button input { /* 購読解除　購読確認ボタンの設定 */
     margin-left: 50px;
 }
+#kakunin_button {
+    border:  solid black ;
+    padding: 5px 20px;
+    font-size: 18px;
+    margin-left: 50px;
+}
 
 div table { /* 表のサイズ設定 */
     width: 600px;
