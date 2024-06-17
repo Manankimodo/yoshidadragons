@@ -81,7 +81,7 @@
         <div id="koudoku_button" class="flex speace">
             <a id="Touroku_button" class="Button" >購読登録</a>
             <a id="Kaijo_button" class="Button" >購読解除</a>
-            <a class="Button" href="S06.html">購読確認</a>
+            <input id="kakunin_button" type="submit" value="購読確認">
         </div>
 
         <!-- テーブル -->
