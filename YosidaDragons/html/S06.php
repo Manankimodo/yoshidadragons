@@ -73,8 +73,7 @@ function es($data) {
                 //接続を解除する
 
 
-                $sql = "SELECT DISTINCT A.*FROM books A, customers B, cust_subscribe C
-                        WHERE A.book_id = C.book_id AND C.cust_id = B.cust_id AND B.cust_id = ";
+                $sql = "SELECT DISTINCT A.*FROM books A, customers B, cust_subscribe CWHERE A.book_id = C.book_id AND C.cust_id = B.cust_id AND B.cust_id = {$cust_id}";
                 $stm = $pdo->prepare($sql);
                 $stm->execute();
                 $result = $stm->fetchAll(PDO::FETCH_ASSOC);
