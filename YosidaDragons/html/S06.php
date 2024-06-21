@@ -28,6 +28,7 @@ function es($data) {
         <pre>
         <?php
         //S04からデータ取得
+        $cust_id = $_POST["cust_id"];
         $name = $_POST["name"];
         $kana = $_POST["kana"];
         $phonnumber = $_POST["phonnumber"];
@@ -35,7 +36,7 @@ function es($data) {
         //日付取得
         $today = date("Y/m/d");
 
-        echo "<div class='flex speace'><p>ID</p><p>3</p></div>";
+        echo "<div class='flex speace'><p>ID</p><p>{$cust_id}</p></div>";
         echo "<div class='flex speace'><div><p>氏名</p></div><div><p>{$name}</p></div></div>";
         echo "<div class='flex speace'><div><p>カナ</p></div><div><p>{$kana}</p></div></div>";
         echo "<div class='flex speace'><div><p>電話番号</p></div><div><p>{$phonnumber}</p></div></div>";
@@ -72,7 +73,8 @@ function es($data) {
                 //接続を解除する
 
 
-                $sql = "SELECT * FROM books";
+                $sql = "SELECT DISTINCT A.*FROM books A, customers B, cust_subscribe C
+                        WHERE A.book_id = C.book_id AND C.cust_id = B.cust_id AND B.cust_id = ";
                 $stm = $pdo->prepare($sql);
                 $stm->execute();
                 $result = $stm->fetchAll(PDO::FETCH_ASSOC);

@@ -22,7 +22,9 @@
         <!-- ID -->
         <div class="flex speace">
             <p>ID</p>
-            <p>3</p>
+            <div>
+                <input value="3" type="text" name="cust_id">
+            </div>
         </div>
 
         <form method="post" action="S06.php">
