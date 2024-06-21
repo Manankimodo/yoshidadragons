@@ -1,3 +1,9 @@
+<?php
+function es($data) {
+    return htmlspecialchars($data , ENT_QUOTES , 'UTF-8');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
