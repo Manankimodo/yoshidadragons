@@ -43,8 +43,6 @@ function es($data) {
         echo "<div class='flex speace'><div><p>住所</p></div><div><p>{$address}</p></div></div>";
         echo "<div class='flex speace'><div><p>変更日</p></div><div><p>{$today}</p></div></div>";
         
-        $cust_id = intval($cust_id);
-        echo gettype($cust_id)
         ?>
         </pre>
 
@@ -72,8 +70,7 @@ function es($data) {
                 $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
                 // 例外がスローされる設定にする
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "データベース{$dbName}に接続しました。";
-
+                
                 $sql = "SELECT DISTINCT A.*FROM books A, customers B, cust_subscribe C WHERE A.book_id = C.book_id AND C.cust_id = B.cust_id AND B.cust_id = :cust_id";
                 $stm = $pdo->prepare($sql);
                 $stm->bindParam(':cust_id', $cust_id, PDO::PARAM_INT); // :cust_id としてプレースホルダーを使用する
