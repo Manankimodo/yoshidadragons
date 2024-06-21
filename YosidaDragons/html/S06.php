@@ -53,6 +53,9 @@ function es($data) {
         }
 
         //address
+        if (empty($address)) {
+            echo "<p>住所にエラーがあります</p>";
+        }
 
         echo "<div class='flex speace'><p>ID</p><p>{$cust_id}</p></div>";
         echo "<div class='flex speace'><div><p>氏名</p></div><div><p>{$name}</p></div></div>";
@@ -88,7 +91,7 @@ function es($data) {
                 $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
                 // 例外がスローされる設定にする
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                
+
                 $sql = "SELECT DISTINCT A.*FROM books A, customers B, cust_subscribe C WHERE A.book_id = C.book_id AND C.cust_id = B.cust_id AND B.cust_id = :cust_id";
                 $stm = $pdo->prepare($sql);
                 $stm->bindParam(':cust_id', $cust_id, PDO::PARAM_INT); // :cust_id としてプレースホルダーを使用する
@@ -97,7 +100,7 @@ function es($data) {
                 $result = $stm->fetchAll(PDO::FETCH_ASSOC);
              
                 echo "<thead><tr>";
-                echo "<th>ID</th><th>ISBN</th><th>タイトル</th><th>著者</th><th>出版</th>";
+                echo "<th>ID</th><th>ISBN</th><th>タイトル</th><th>著者</th><th>出版</th><th>在庫</th><th>価格</th>";
                 echo "</tr></thead>";
                 
                 echo "<tbody>";
