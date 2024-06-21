@@ -101,46 +101,7 @@ function es($data) {
                 exit();
             }
         ?>
-            <tr>
-                <th>NO</th>
-                <th>ID</th>
-                <th>ISBN</th>
-                <th>タイトル</th>
-                <th>著者名</th>
-                <th>出版社</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>44444444</td>
-                <td>人が眠る街</td>
-                <td>鈴木</td>
-                <td>門山社</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>3</td>
-                <td>44444442</td>
-                <td>ポップウップ</td>
-                <td>宇多川正雄</td>
-                <td>ポプラ社</td>
-            </tr>
-            <tr>
-                <td>　</td>
-                <td>　</td>
-                <td>　</td>
-                <td>　</td>
-                <td>　</td>
-                <td>　</td>
-            </tr>
-            <tr>
-                <td>　</td>
-                <td>　</td>
-                <td>　</td>
-                <td>　</td>
-                <td>　</td>
-                <td>　</td>
-            </tr>
+            
         </table>
 
         <div class="flex">
