@@ -39,12 +39,19 @@ function es($data) {
         //patternチェック
         //cust_id
         //name
+        if (empty($name)) {
+            echo "<p>名前にエラーがあります</p>";
+        }
         //kana
+        if (empty($kana)) {
+            echo "<p>カナにエラーがあります</p>";
+        }
         //phonenumber
-        $pattern = "/^[0-9]{11}$/";
-        if (!preg_match($pattern, $phonnumber)) {
+        $pattern2 = "/^[0-9]{11}$/";
+        if (!preg_match($pattern2, $phonnumber)) {
             echo "<p>電話番号にエラーがあります</p>";
         }
+
         //address
 
         echo "<div class='flex speace'><p>ID</p><p>{$cust_id}</p></div>";
