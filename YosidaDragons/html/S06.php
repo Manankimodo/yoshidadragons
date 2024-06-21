@@ -64,7 +64,31 @@
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo "データベース{$dbName}に接続しました。";
                 //接続を解除する
-                $pdo = NULL;
+
+
+                $sql = "SELECT * FROM books";
+                $stm = $pdo->prepare($sql);
+                $stm->execute();
+                $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+             
+                echo "<table border='1'>";
+                echo "<thead><tr>";
+                echo "<th>ID</th><th>ISBN</th><th>タイトル</th><th>著者</th><th>出版</th>";
+                echo "</tr></thead>";
+                
+                echo "<tbody>";
+                #es関数の処理は上のfunction esに記述している
+                foreach ($result as $row) {
+                    echo "<tr>";
+                    echo "<td>", es($row['book_id']), "</td>";
+                    echo "<td>", es($row['isbn']), "</td>";
+                    echo "<td>", es($row['tytle']), "</td>";
+                    echo "<td>", es($row['author_name']), "</td>";
+                    echo "<td>", es($row['publisher']), "</td>";
+                    echo "<td>", es($row['price']), "</td>";
+                    echo "</tr>";
+                }
+                echo "</tbody></table>";
             } catch (Exception $e) {
                 echo "<span class='error'>エラーがありました。</span><br>";
                 echo $e->getMessage();
