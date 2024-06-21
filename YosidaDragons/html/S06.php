@@ -36,6 +36,17 @@ function es($data) {
         //日付取得
         $today = date("Y/m/d");
 
+        //patternチェック
+        //cust_id
+        //name
+        //kana
+        //phonenumber
+        $pattern = "/^[0-9]{11}$/";
+        if (!preg_match($pattern, $phonnumber)) {
+            echo "<p>電話番号にエラーがあります</p>";
+        }
+        //address
+
         echo "<div class='flex speace'><p>ID</p><p>{$cust_id}</p></div>";
         echo "<div class='flex speace'><div><p>氏名</p></div><div><p>{$name}</p></div></div>";
         echo "<div class='flex speace'><div><p>カナ</p></div><div><p>{$kana}</p></div></div>";
