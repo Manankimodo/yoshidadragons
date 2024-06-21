@@ -19,15 +19,17 @@
 <body>
     <div class="container">
         
-        <!-- ID -->
-        <div class="flex speace">
-            <p>ID</p>
-            <div>
-                <input value="3" type="text" name="cust_id">
-            </div>
-        </div>
-
         <form method="post" action="S06.php">
+        
+            <!-- ID -->
+            <div class="flex speace">
+                <p>ID</p>
+                <div>
+                    <input value="3" type="text" name="cust_id">
+                </div>
+            </div>
+
+        
             <!-- 氏名 -->
             <div class="flex speace">
                 <div>
