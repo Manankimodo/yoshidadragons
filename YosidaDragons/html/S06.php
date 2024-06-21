@@ -77,7 +77,6 @@ function es($data) {
                 $stm->execute();
                 $result = $stm->fetchAll(PDO::FETCH_ASSOC);
              
-                echo "<table border='1'>";
                 echo "<thead><tr>";
                 echo "<th>ID</th><th>ISBN</th><th>タイトル</th><th>著者</th><th>出版</th>";
                 echo "</tr></thead>";
@@ -91,10 +90,11 @@ function es($data) {
                     echo "<td>", es($row['tytle']), "</td>";
                     echo "<td>", es($row['author_name']), "</td>";
                     echo "<td>", es($row['publisher']), "</td>";
+                    echo "<td>", es($row['stock']), "</td>";
                     echo "<td>", es($row['price']), "</td>";
                     echo "</tr>";
                 }
-                echo "</tbody></table>";
+                echo "</tbody>";
             } catch (Exception $e) {
                 echo "<span class='error'>エラーがありました。</span><br>";
                 echo $e->getMessage();
