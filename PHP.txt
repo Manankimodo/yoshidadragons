@@ -109,3 +109,6 @@ DELETE FROM 表 WHERE 条件
 (更新)
 UPDATE 表 SET 更新情報 WHERE 条件
 ------------------------------------------------------------------------
+$sql = "SELECT * FROM Test001";
+$stm = $pdo->prepare($sql);
+$stm->execute();

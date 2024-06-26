@@ -37,17 +37,39 @@ function es($data) {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "データベース{$dbname}接続<br>";
 
-        $sql = "SELECT * FROM Test001";
+        
+
+        echo "<form action=''>"
+        echo "<div class='flex'>";
+        echo "<div class='text'><p>電話番号</p><p>(ハイフンなし)</p></div>" 
+        echo "<div class='speace'><input type='text'><p>例:08012345678</p></div>"
+        
+        echo "<div class='flex'>"
+        echo "<div class='text speace'><p>氏名</p></div>"
+        echo "<div class='speace'><input type='text'><p>例:山田太郎</p></div>"
+        
+        echo "<div class='flex'>"
+        echo "<div class='text speace'><p>氏名(全角カナ)</p></div>"
+        echo "<div class='speace'><input type='text'><p>例:ヤマダタロウ</p></div>"
+        
+        echo "<div class='flex'>"
+        echo "<div class='text speace'><p>クレジットカード番号</p></div>"
+        echo "<div class='speace'><input type='text'><p>例:1234567890123456</p></div>"
+        
+        echo "<div class='flex'>"
+        echo "<div class='text speace'><p>住所</p></div>"
+        echo "<div class='speace'><input type='text'><p>例:大分県高崎山</p></div>"
+        echo "</form>"
+        
+
+        $sql = "INSERT INTO customers (cust_id, name, kana, tel, adress, credit, created_at, updated_at) VALUES (値1, 値2,...)";
         $stm = $pdo->prepare($sql);
         $stm->execute();
-        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
 
         
 
         
         #es関数の処理は上のfunction esに記述している
-        foreach ($result as $row) {
-        }
     } catch(Exception $e) {
         echo '<span>エラー</span><br>';
         echo $e->getMessage();
