@@ -59,12 +59,14 @@ function es($data) {
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>住所</p></div>";
         echo "<div class='speace'><input type='text'><p>例:大分県高崎山</p></div>";
+        echo "<div id="touroku_button"><a class="Button" href="">登録する</a></div>"
+
         echo "</form>";
         
 
         $sql = "INSERT INTO customers (cust_id, name, kana, tel, adress, credit, created_at, updated_at) VALUES (値1, 値2,...)";
-        $stm = $pdo->prepare($sql);
-        $stm->execute();
+        //$stm = $pdo->prepare($sql);
+        //$stm->execute();
 
         
 
