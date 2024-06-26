@@ -36,7 +36,7 @@ function es($data) {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 
-        echo "<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method= 'post'>";
+        echo "<form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='post'>";
         echo "<div class='flex'>";
         echo "<div class='text'><p>電話番号</p><p>(ハイフンなし)</p></div>" ;
         echo "<div class='speace'><input type='text' name='tel'><p>例:08012345678</p></div>";
