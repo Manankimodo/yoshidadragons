@@ -36,7 +36,7 @@ function es($data) {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 
-        echo "<form action=''>";
+        echo "<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method= 'post'>";
         echo "<div class='flex'>";
         echo "<div class='text'><p>電話番号</p><p>(ハイフンなし)</p></div>" ;
         echo "<div class='speace'><input type='text' name='tel'><p>例:08012345678</p></div>";
@@ -68,22 +68,7 @@ function es($data) {
 
         echo "</form>";
         
-        $sql = "SELECT COUNT(*) FROM customers";
-        $stmt = $pdo->query($sql);
-        $rowCount = $stmt->fetchColumn();
-
-        $tel = $_POST['tel'];
-        $name = $_POST['name'];
-        $kana = $_POST['kana'];
-        $credit = $_POST['credit'];
-        $address = $_POST['address'];
         
-        $today = date("Y/m/d");
-
-        $sql = "INSERT INTO customers (cust_id, name, kana, tel, address, credit, created_at, updated_at) VALUES ($rowCount+1, name, kana, tel, address, credit, $today, $today)";
-        $stm = $pdo->prepare($sql);
-        $stm->execute();
-
         
 
         
@@ -93,6 +78,24 @@ function es($data) {
         echo $e->getMessage();
         exit();
     }
+    ?>
+    <?php
+    $sql = "SELECT COUNT(*) FROM customers";
+    $stmt = $pdo->query($sql);
+    $rowCount = $stmt->fetchColumn();
+
+    $tel = $_POST['tel'];
+    $name = $_POST['name'];
+    $kana = $_POST['kana'];
+    $credit = $_POST['credit'];
+    $address = $_POST['address'];
+    
+    $today = date("YYYY-mm-dd");
+
+    $sql = "INSERT INTO customers (cust_id, name, kana, tel, address, credit, created_at, updated_at) VALUES ($rowCount+1, name, kana, tel, address, credit, $today, $today)";
+    $stm = $pdo->prepare($sql);
+    $stm->execute();
+
     ?>
     </div>
 </body>
