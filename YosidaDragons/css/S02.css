@@ -18,9 +18,8 @@ div form input { /* inputタグの設定 */
     margin-bottom: 40px;
 }
 
-#touroku_button a{ /* 登録ボタンの設定 */
+.touroku_button{ /* 登録ボタンの設定 */
     border: solid black;
     margin-left: 500px;
     padding: 10px 20px;
-    font-size: 15px;
 }

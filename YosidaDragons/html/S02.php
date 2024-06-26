@@ -42,31 +42,32 @@ function es($data) {
         echo "<form action=''>";
         echo "<div class='flex'>";
         echo "<div class='text'><p>電話番号</p><p>(ハイフンなし)</p></div>" ;
-        echo "<div class='speace'><input type='text'><p>例:08012345678</p></div>";
+        echo "<div class='speace'><input type='text' name='tel'><p>例:08012345678</p></div>";
         echo "</div>";
         
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>氏名</p></div>";
-        echo "<div class='speace'><input type='text'><p>例:山田太郎</p></div>";
+        echo "<div class='speace'><input type='text' name='name'><p>例:山田太郎</p></div>";
         echo "</div>";
         
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>氏名(全角カナ)</p></div>";
-        echo "<div class='speace'><input type='text'><p>例:ヤマダタロウ</p></div>";
+        echo "<div class='speace'><input type='text' name='kana'><p>例:ヤマダタロウ</p></div>";
         echo "</div>";
         
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>クレジットカード番号</p></div>";
-        echo "<div class='speace'><input type='text'><p>例:1234567890123456</p></div>";
+        echo "<div class='speace'><input type='text' name='credit'><p>例:1234567890123456</p></div>";
         echo "</div>";
         
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>住所</p></div>";
-        echo "<div class='speace'><input type='text'><p>例:大分県高崎山</p></div>";
+        echo "<div class='speace'><input type='text' name='address'><p>例:大分県高崎山</p></div>";
         echo "</div>";
 
-        echo "<div id='touroku_button'><a class='Button' href=''>登録する</a></div>";
         echo "</div>";
+
+        echo "<div' class='touroku_button'><input type='submit' value='登録'></div>";
 
         echo "</form>";
         
