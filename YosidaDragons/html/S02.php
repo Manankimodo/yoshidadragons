@@ -59,7 +59,7 @@ function es($data) {
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>住所</p></div>";
         echo "<div class='speace'><input type='text'><p>例:大分県高崎山</p></div>";
-        echo "<div id="touroku_button"><a class="Button" href="">登録する</a></div>"
+        echo "<div id='touroku_button'><a class='Button' href=''>登録する</a></div>";
 
         echo "</form>";
         
