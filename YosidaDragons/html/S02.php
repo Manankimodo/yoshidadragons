@@ -33,11 +33,8 @@ function es($data) {
     <?php
     try {
         $pdo = new PDO($dsn , $user , $password);
-        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-
-
 
         echo "<form action=''>";
         echo "<div class='flex'>";
@@ -71,10 +68,21 @@ function es($data) {
 
         echo "</form>";
         
+        $sql = "SELECT COUNT(*) FROM customers";
+        $stmt = $pdo->query($sql);
+        $rowCount = $stmt->fetchColumn();
 
-        $sql = "INSERT INTO customers (cust_id, name, kana, tel, adress, credit, created_at, updated_at) VALUES (値1, 値2,...)";
-        //$stm = $pdo->prepare($sql);
-        //$stm->execute();
+        $tel = $_POST['tel'];
+        $name = $_POST['name'];
+        $kana = $_POST['kana'];
+        $credit = $_POST['credit'];
+        $address = $_POST['address'];
+        
+        $today = date("Y/m/d");
+
+        $sql = "INSERT INTO customers (cust_id, name, kana, tel, address, credit, created_at, updated_at) VALUES ($rowCount+1, name, kana, tel, address, credit, $today, $today)";
+        $stm = $pdo->prepare($sql);
+        $stm->execute();
 
         
 
