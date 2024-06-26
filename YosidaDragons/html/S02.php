@@ -35,7 +35,7 @@ function es($data) {
         $pdo = new PDO($dsn , $user , $password);
         $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "データベース{$dbname}接続<br>";
+    
 
 
 
@@ -85,77 +85,6 @@ function es($data) {
         exit();
     }
     ?>
-
-
-        <!-- 電話番号 -->
-        <div class="flex">
-            <div class="text">
-                <p>電話番号</p>
-                <p>(ハイフンなし)</p>
-            </div>
-            <div class="speace">
-                <form action="">
-                    <input type="text">
-                </form>
-                <p>例:08012345678</p>
-            </div>
-        </div>
-
-        <!-- 氏名 -->
-        <div class="flex">
-            <div class="text speace">
-                <p>氏名</p>
-            </div>
-            <div class="speace">
-                <form action="">
-                    <input type="text">
-                </form>
-                <p>例:山田太郎</p>
-            </div>
-
-        </div>
-        <div class="flex">
-            <div class="text speace">
-                <p>氏名(全角カナ)</p>
-            </div>
-            <div class="speace">
-                <form action="">
-                    <input type="text">
-                </form>
-                <p>例:ヤマダタロウ</p>
-            </div>
-        </div>
-
-        <!-- クレジットカード情報 -->
-        <div class="flex">
-            <div class="text speace">
-                <p>クレジットカード番号</p>
-            </div>
-            <div class="speace">
-                <form action="">
-                    <input type="text">
-                </form>
-                <p>例:1234567890123456</p>
-            </div>
-        </div>
-
-        <!-- 住所情報 -->
-        <div class="flex">
-            <div class="text speace">
-                <p>住所</p>
-            </div>
-            <div class="speace">
-                <form action="">
-                    <input type="text">
-                </form>
-                <p>例:大分県高崎山</p>
-            </div>
-        </div>
-
-        <!-- 登録ボタン -->
-        <div id="touroku_button">
-            <a class="Button" href="">登録する</a>
-        </div>
     </div>
 </body>
 </html>
