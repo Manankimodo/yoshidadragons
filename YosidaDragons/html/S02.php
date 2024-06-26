@@ -43,23 +43,30 @@ function es($data) {
         echo "<div class='flex'>";
         echo "<div class='text'><p>電話番号</p><p>(ハイフンなし)</p></div>" ;
         echo "<div class='speace'><input type='text'><p>例:08012345678</p></div>";
+        echo "</div>";
         
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>氏名</p></div>";
         echo "<div class='speace'><input type='text'><p>例:山田太郎</p></div>";
+        echo "</div>";
         
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>氏名(全角カナ)</p></div>";
         echo "<div class='speace'><input type='text'><p>例:ヤマダタロウ</p></div>";
+        echo "</div>";
         
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>クレジットカード番号</p></div>";
         echo "<div class='speace'><input type='text'><p>例:1234567890123456</p></div>";
+        echo "</div>";
         
         echo "<div class='flex'>";
         echo "<div class='text speace'><p>住所</p></div>";
         echo "<div class='speace'><input type='text'><p>例:大分県高崎山</p></div>";
+        echo "</div>";
+
         echo "<div id='touroku_button'><a class='Button' href=''>登録する</a></div>";
+        echo "</div>";
 
         echo "</form>";
         
@@ -132,8 +139,8 @@ function es($data) {
             </div>
         </div>
 
-         <!-- 住所情報 -->
-         <div class="flex">
+        <!-- 住所情報 -->
+        <div class="flex">
             <div class="text speace">
                 <p>住所</p>
             </div>
