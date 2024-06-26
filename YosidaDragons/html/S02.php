@@ -35,6 +35,18 @@
         <!-- 氏名 -->
         <div class="flex">
             <div class="text speace">
+                <p>氏名</p>
+            </div>
+            <div class="speace">
+                <form action="">
+                    <input type="text">
+                </form>
+                <p>例:山田太郎</p>
+            </div>
+
+        </div>
+        <div class="flex">
+            <div class="text speace">
                 <p>氏名(全角カナ)</p>
             </div>
             <div class="speace">
@@ -55,6 +67,19 @@
                     <input type="text">
                 </form>
                 <p>例:1234567890123456</p>
+            </div>
+        </div>
+
+         <!-- 住所情報 -->
+         <div class="flex">
+            <div class="text speace">
+                <p>住所</p>
+            </div>
+            <div class="speace">
+                <form action="">
+                    <input type="text">
+                </form>
+                <p>例:大分県高崎山</p>
             </div>
         </div>
 
