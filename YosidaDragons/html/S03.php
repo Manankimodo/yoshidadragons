@@ -1,3 +1,20 @@
+<?php
+$user = 'root';
+$password = '';
+
+// 利用するデータベース
+$dbName = 'test';
+$host = 'localhost:3306';
+
+// MySQLのDSN文字列
+$dsn = "mysql:host={$host};dbname={$dbName};charset=utf8";
+
+// HTMLエスケープ用の関数
+function es($data) {
+    return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +36,7 @@
     <div class="container">
         
         <!-- 電話番号 -->
-        <form action="" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <div class="flex">
             <div class="text">
                 <p>電話番号</p>
@@ -58,18 +75,6 @@
         <div class="speace">
             <table>
                 <?php
-                    //データーベースユーザ
-                    $user = 'root';
-                    $password = '';
-
-                    //利用するデータベース
-                    $dbName = 'test';
-
-                    // 利用するデータベース利用するデータベース
-                    $host = 'localhost:3306';
-
-                    //MySQLのDSN文字列
-                    $dsn = "mysql:host={$host};dbname={$dbName};charset=utf8";
 
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         //form method = postからデータを受け取る
@@ -82,9 +87,7 @@
                     } else if ($_SERVER["REQUEST_METHOD"] == "GET"){
                         //form method = getからデータを受け取る
                     }
-
-
-                   
+                    
 
                     
                     $sql = "SELECT DISTINCT B.*FROM books A, customers B, cust_subscribe C WHERE name=:name AND tel = :Tel";
