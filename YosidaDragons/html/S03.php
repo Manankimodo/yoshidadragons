@@ -75,28 +75,40 @@ function es($data) {
         <div class="speace">
             <table>
                 <?php
-
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        //form method = postからデータを受け取る
-                    
-                        $Tel = $_POST['tel'];
-                        $name = $_POST['name'];
-
-                        echo $Tel,$name;
-                    
-                    } else if ($_SERVER["REQUEST_METHOD"] == "GET"){
-                        //form method = getからデータを受け取る
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // form method = postからデータを受け取る
+                    $Tel = $_POST['tel'];
+                    $name = $_POST['name'];
+                
+                    try {
+                        // データベースに接続
+                        $pdo = new PDO($dsn, $user, $password);
+                        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                        // SQLクエリの準備と実行
+                        $sql = "SELECT DISTINCT B.* FROM books A, customers B, cust_subscribe C WHERE name=:name AND tel=:Tel";
+                        $stm = $pdo->prepare($sql);
+                        $stm->bindParam(':Tel', $Tel, PDO::PARAM_STR);
+                        $stm->bindParam(':name', $name, PDO::PARAM_STR);
+                        $stm->execute();
+                
+                        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+                    } catch (Exception $e) {
+                        echo '<span>エラー</span><br>';
+                        echo $e->getMessage();
+                        exit();
                     }
+                }
                     
 
                     
-                    $sql = "SELECT DISTINCT B.*FROM books A, customers B, cust_subscribe C WHERE name=:name AND tel = :Tel";
-                    $stm->bindParam(':Tel', $Tel, PDO::PARAM_INT); // :Tel としてプレースホルダーを使用する
-                    $stm->bindParam(':name', $name, PDO::PARAM_INT); // :name としてプレースホルダーを使用する
-                    $stm = $pdo->prepare($sql);
-                    $stm->execute();
+                    // $sql = "SELECT DISTINCT B.*FROM books A, customers B, cust_subscribe C WHERE name=:name AND tel = :Tel";
+                    // $stm->bindParam(':Tel', $Tel, PDO::PARAM_INT); // :Tel としてプレースホルダーを使用する
+                    // $stm->bindParam(':name', $name, PDO::PARAM_INT); // :name としてプレースホルダーを使用する
+                    // $stm = $pdo->prepare($sql);
+                    // $stm->execute();
                     
-                    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+                    // $result = $stm->fetchAll(PDO::FETCH_ASSOC);
                     
                     echo "<thead><tr>";
                     echo "<th>ID</th><th>名前</th><th>カナ</th><th>電話番号</th><th>住所</th><th>クレジット</th><th>作成日</th>th>更新日</th>";
