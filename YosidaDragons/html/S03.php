@@ -19,25 +19,25 @@
     <div class="container">
         
         <!-- 電話番号 -->
+        <form action="" method="post">
         <div class="flex">
             <div class="text">
                 <p>電話番号</p>
                 <p>(ハイフン無し)</p>
             </div> 
             <div class="speace">
-                <input type="text" name="" id="">
+                <input type="text" name="tel" id="">
                 <p>例:08012345678</p>
             </div>
         </div>
 
         <!-- 氏名 -->
-        <form action="">
         <div class="flex">
             <div class="text speace">
                 <p>氏名(全角カナ)</p>
             </div> 
             <div class="speace">
-                <input type="text" name="" id="">
+                <input type="text" name="name" id="">
                 <p>例:ヤマダタロウ</p>
             </div>
         </div>
@@ -48,7 +48,7 @@
             顧客管理情報 → S04(顧客情報変更)
         -->
         <div class="flex speace" id="kensaku_button">
-            <a class="Button" href="">検索</a>
+            <input type="submit" value="検索">
             <a class="Button" href="">入力消去</a>
             <a class="Button" href="S04.php">顧客管理情報</a>
         </div>
@@ -58,15 +58,45 @@
         <div class="speace">
             <table>
                 <?php
-                    $sql = "SELECT DISTINCT A.*FROM books A, customers B, cust_subscribe C WHERE A.book_id = C.book_id AND C.cust_id = B.cust_id AND B.cust_id = :cust_id";
+                    //データーベースユーザ
+                    $user = 'root';
+                    $password = '';
+
+                    //利用するデータベース
+                    $dbName = 'test';
+
+                    // 利用するデータベース利用するデータベース
+                    $host = 'localhost:3306';
+
+                    //MySQLのDSN文字列
+                    $dsn = "mysql:host={$host};dbname={$dbName};charset=utf8";
+
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        //form method = postからデータを受け取る
+                    
+                        $Tel = $_POST['tel'];
+                        $name = $_POST['name'];
+
+                        echo $Tel,$name;
+                    
+                    } else if ($_SERVER["REQUEST_METHOD"] == "GET"){
+                        //form method = getからデータを受け取る
+                    }
+
+
+                   
+
+                    
+                    $sql = "SELECT DISTINCT B.*FROM books A, customers B, cust_subscribe C WHERE name=:name AND tel = :Tel";
+                    $stm->bindParam(':Tel', $Tel, PDO::PARAM_INT); // :Tel としてプレースホルダーを使用する
+                    $stm->bindParam(':name', $name, PDO::PARAM_INT); // :name としてプレースホルダーを使用する
                     $stm = $pdo->prepare($sql);
-                    $stm->bindParam(':cust_id', $cust_id, PDO::PARAM_INT); // :cust_id としてプレースホルダーを使用する
                     $stm->execute();
                     
                     $result = $stm->fetchAll(PDO::FETCH_ASSOC);
                     
                     echo "<thead><tr>";
-                    echo "<th>ID</th><th>ISBN</th><th>タイトル</th><th>著者</th><th>出版</th><th>在庫</th><th>価格</th>";
+                    echo "<th>ID</th><th>名前</th><th>カナ</th><th>電話番号</th><th>住所</th><th>クレジット</th><th>作成日</th>th>更新日</th>";
                     echo "</tr></thead>";
                     
                     echo "<tbody>";
@@ -74,16 +104,20 @@
 
                     foreach ($result as $row) {
                         echo "<tr>";
-                        echo "<td>", es($row['book_id']), "</td>";
-                        echo "<td>", es($row['isbn']), "</td>";
-                        echo "<td>", es($row['tytle']), "</td>";
-                        echo "<td>", es($row['author_name']), "</td>";
-                        echo "<td>", es($row['publisher']), "</td>";
-                        echo "<td>", es($row['stock']), "</td>";
-                        echo "<td>", es($row['price']), "</td>";
+                        echo "<td>", es($row['cust_id']), "</td>";
+                        echo "<td>", es($row['name']), "</td>";
+                        echo "<td>", es($row['kana']), "</td>";
+                        echo "<td>", es($row['tel']), "</td>";
+                        echo "<td>", es($row['address']), "</td>";
+                        echo "<td>", es($row['credit']), "</td>";
+                        echo "<td>", es($row['created_at']), "</td>";
+                        echo "<td>", es($row['updated_at']), "</td>";
                         echo "</tr>";
+                        echo print_r($result);
                     }
+
                     echo "</tbody>";
+                    
                 ?>
             </table>
         </div>
