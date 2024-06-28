@@ -73,7 +73,7 @@ function es($data) {
 
         <!-- テーブル -->
         <div class="speace">
-            <table>
+            <table class="Table">
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // form method = postからデータを受け取る
@@ -86,7 +86,7 @@ function es($data) {
                         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 
                         // SQLクエリの準備と実行
-                        $sql = "SELECT DISTINCT B.* FROM books A, customers B, cust_subscribe C WHERE name=:name AND tel=:Tel";
+                        $sql = "SELECT DISTINCT B.* FROM books A, customers B, cust_subscribe C WHERE kana=:name AND tel=:Tel";
                         $stm = $pdo->prepare($sql);
                         $stm->bindParam(':Tel', $Tel, PDO::PARAM_STR);
                         $stm->bindParam(':name', $name, PDO::PARAM_STR);
@@ -111,7 +111,7 @@ function es($data) {
                     // $result = $stm->fetchAll(PDO::FETCH_ASSOC);
                     
                     echo "<thead><tr>";
-                    echo "<th>ID</th><th>名前</th><th>カナ</th><th>電話番号</th><th>住所</th><th>クレジット</th><th>作成日</th>th>更新日</th>";
+                    echo "<th>ID</th><th>名前</th><th>カナ</th><th>電話番号</th><th>住所</th><th>クレジット</th><th>作成日</th><th>更新日</th>";
                     echo "</tr></thead>";
                     
                     echo "<tbody>";
@@ -128,7 +128,7 @@ function es($data) {
                         echo "<td>", es($row['created_at']), "</td>";
                         echo "<td>", es($row['updated_at']), "</td>";
                         echo "</tr>";
-                        echo print_r($result);
+                        
                     }
 
                     echo "</tbody>";
