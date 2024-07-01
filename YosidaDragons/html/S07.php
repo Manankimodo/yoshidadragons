@@ -88,14 +88,14 @@ function es($data) {
                 $isbn = $_POST['isbn'];
                 $title = $_POST['title'];
                 $publisher = $_POST['publisher'];
-            
+                
                 try {
                     // データベースに接続
                     $pdo = new PDO($dsn, $user, $password);
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
                     // SQLクエリの準備と実行
-                    $sql = "SELECT DISTINCT B.* FROM books A, customers B, cust_subscribe C WHERE isbn=:isbn AND tytle=:title AND publisher=:publisher";
+                    $sql = "SELECT DISTINCT A.* FROM books A, customers B, cust_subscribe C WHERE isbn=:isbn AND tytle=:title AND publisher=:publisher";
                     $stm = $pdo->prepare($sql);
                     $stm->bindParam(':isbn', $isbn, PDO::PARAM_STR);
                     $stm->bindParam(':title', $title, PDO::PARAM_STR);
