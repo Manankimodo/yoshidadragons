@@ -18,99 +18,87 @@
 <body>
     <div class="container">
 
-        <div>
-            <!-- ID -->
-            <div class="flex speace">
-                <p>ID</p>
-                <p>1</p>
-            </div>
+        <form action=""> 
+            <div>
+                <!-- ID -->
+                <div class="flex speace">
+                    <p>ID</p>
+                    <p>1</p>
+                </div>
 
-            <!-- ISBN -->
-            <div class="flex speace">
-                <p>ISBN</p>
-                <form action="">
+                <!-- ISBN -->
+                <div class="flex speace">
+                    <p>ISBN</p>
                     <input value="43444271000" type="text" name="" id="">
-                </form>
-            </div>
+                </div>
 
-            <!-- タイトル -->
-            <div class="flex speace">
-                <p>タイトル</p>
-                <form action="">
+                <!-- タイトル -->
+                <div class="flex speace">
+                    <p>タイトル</p>
                     <input value="人が眠る街" type="text" name="" id="">
-                </form>
-            </div>
+                </div>
 
-            <!-- 著者名 -->
-            <div class="flex speace">
-                <p>著者名</p>
-                <form action="">
+                <!-- 著者名 -->
+                <div class="flex speace">
+                    <p>著者名</p>
                     <input value="鈴木涼子" type="text">
-                </form>
-            </div>
+                </div>
 
-            <!-- 出版社 -->
-            <div class="flex speace">
-                <p>出版社</p>
-                <form action="">
+                <!-- 出版社 -->
+                <div class="flex speace">
+                    <p>出版社</p>
                     <input value="門山社" type="text">
-                </form>
-            </div>
+                </div>
 
-            <!-- 出版日 -->
-            <div class="flex speace">
-                <p>出版日</p>
-                <form action="">
+                <!-- 出版日 -->
+                <div class="flex speace">
+                    <p>出版日</p>
                     <input value="20xx/01/21" type="text">
-                </form>
-            </div>
+                </div>
 
-            <!-- 価格(円) -->
-            <div class="flex speace">
-                <p>価格(円)</p>
-                <form action="">
+                <!-- 価格(円) -->
+                <div class="flex speace">
+                    <p>価格(円)</p>
                     <input value="980" type="text">
-                </form>
-            </div>
+                </div>
 
-            <!-- ジャンル -->
-            <div class="flex speace">
-                <p>ジャンル</p>
-                <form action="">
+                <!-- ジャンル -->
+                <div class="flex speace">
+                    <p>ジャンル</p>
                     <input value="ミステリー" type="text">
-                </form>
+                </div>
+
+                <!-- 定期購読社数 -->
+                <div class="flex speace">
+                    <p>定期購読社数</p>
+                    <p>6人</p>
+                </div>
+
             </div>
 
-            <!-- 定期購読社数 -->
-            <div class="flex speace">
-                <p>定期購読社数</p>
-                <p>6人</p>
-            </div>
+            <!-- 戻る　OK　ボタン -->
+            <!-- <div class="flex">
+                <div id="back_button">
+                    <a class="Button" href="">戻る</a>
+                </div>
+                <div id="OK_button">
+                    <a class="Button" href="">OK</a>
+                </div>
+            </div> -->
+            
+            <div class="flex">
+                <!-- 戻るボタン -->
+                <div id="back_button">
+                    <a class="Button" href="S07.php">戻る</a>
+                </div>
 
-        </div>
-
-        <!-- 戻る　OK　ボタン -->
-        <!-- <div class="flex">
-            <div id="back_button">
-                <a class="Button" href="">戻る</a>
+                <!-- OKボタン -->
+                <div id="OK_button">
+                    <a class="Button" href="">OK</a>
+                </div>
             </div>
-            <div id="OK_button">
-                <a class="Button" href="">OK</a>
-            </div>
-        </div> -->
+        </form>
         
-        <div class="flex">
-            <!-- 戻るボタン -->
-            <div id="back_button">
-                <a class="Button" href="S07.php">戻る</a>
-            </div>
-
-            <!-- OKボタン -->
-            <div id="OK_button">
-            <a class="Button" href="">OK</a>
-        </div>
-        </div>
-
     </div>
 </body>
 </html>
