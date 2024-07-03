@@ -110,45 +110,31 @@ DELETE FROM 表 WHERE 条件
 UPDATE 表 SET 更新情報 WHERE 条件
 ------------------------------------------------------------------------
 
-------------------------------------------------------------------------
-$sql = "SELECT * FROM Test001";
+$sql = "SELECT * FROM ○○○○";
 $stm = $pdo->prepare($sql);
 $stm->execute();
 ------------------------------------------------------------------------
+$sql = "SELECT * FROM ○○○○";
+    SQL文を生成
+$stm = $pdo->prepare($sql);
+    生成したSQLを準備
+$stm->execute();
+    SQLの実行
 ------------------------------------------------------------------------
 
-
-
-
-<form>
+<データベース共有>
 ------------------------------------------------------------------------
-<form action="" method="post">
-    <label for="name">名前:</label>
-    <input type="text" id="name" name="name" required>
-    <input type="submit" value="送信">
-</form>
+(デーアベース保持者側の設定)
+Require local
+↓
+#Require local
+Require all granted
 ------------------------------------------------------------------------
-<form action="" method="post">
-    同一ファイル内にデータを送りたいときは action = " "の中に
-    自分自身のファイル名を指定する
-------------------------------------------------------------------------
+httpd-xampp.conf　の設定変更
 
-<受け取り側>
-------------------------------------------------------------------------
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //form method = postからデータを受け取る
+開いたファイルの93行目を下記のように修正します。
 
-    $name = $_POST['name'];
+検索するときのURLは
 
-} else if ($_SERVER["REQUEST_METHOD"] == "GET"){
-    //form method = getからデータを受け取る
-}
-?>
+localhost→接続先のIPアドレスになる
 ------------------------------------------------------------------------
-$_SERVER["REQUEST_METHOD"]
-    どのサーバーからデータ(POSTとGET)を受け取ったか
-if ($_SERVER["REQUEST_METHOD"] == "POST") {}
-    受け取ったデータがPOST型かどうか
-$name = $_POST['name'];
-    フォームから送信されたデータを取得
