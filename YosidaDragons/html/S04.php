@@ -128,7 +128,7 @@
 
         <!-- 戻るボタン -->
         <div id="back_button">
-            <a class="Button" href="S03.html">戻る</a>
+            <a class="Button" href="./S03.php">戻る</a>
         </div>
 
     </div>
