@@ -8,7 +8,7 @@
 .text { /* テキストのサイズ */
     width: 200px;
 }
-div form input { /* inputタグの設定 */
+div form .speace input { /* inputタグの設定 */
     border: solid black;
     width: 400px;
     border-radius: 4px;
