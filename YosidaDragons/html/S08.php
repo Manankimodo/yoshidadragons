@@ -104,25 +104,26 @@ function es($data) {
 
                 <!-- OKボタン -->
                 <div id="OK_button">
-                    <a class="Button" href="">更新</a>
+                    <input type="submit" value="更新">
                 </div>
             </div>
+        </form>
 
             <table class="Table">
             <?php 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // form method = postからデータを受け取る
                 $id = $_POST['id'];
-                $ISBN = $_POST['isbn'];
+                $isbn = $_POST['isbn'];
                 $title = $_POST['title'];
                 $author_name = $_POST['author_name'];
                 $publisher = $_POST['publisher'];
                 $created_at = $_POST['created_at'];
                 $price = $_POST['price'];
-                $genre = $_POST['genre'];
                 $customer = $_POST['customer'];
                 echo $isbn,$title,$publisher;
                 try {
+                    echo マナト;
                     // データベースに接続
                     $pdo = new PDO($dsn, $user, $password);
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -130,19 +131,19 @@ function es($data) {
                     // SQLクエリの準備と実行
                     $sql = "UPDATE books SET book_id=:id WHERE book_id=1";
                     $stm = $pdo->prepare($sql);
-                    $stm->bindParam(':id', $id, PDO::PARAM_STR);
-                    $stm->bindParam(':isbn', $isbn, PDO::PARAM_STR);
+                    $stm->bindParam(':id', $id, PDO::PARAM_INT);
+                    $stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
                     $stm->bindParam(':title', $title, PDO::PARAM_STR);
                     $stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
                     $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
                     $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
-                    $stm->bindParam(':price', $price, PDO::PARAM_STR);
+                    $stm->bindParam(':price', $price, PDO::PARAM_INT);
                     $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
                     
                     echo print_r($id,$isbn,$title,$author_name,$publisher,$created_at,$price,$customer);
                     $stm->execute();
             
-                    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+                    
                 } catch (Exception $e) {
                     echo '<span>エラー</span><br>';
                     echo $e->getMessage();
@@ -161,9 +162,6 @@ function es($data) {
                 // $result = $stm->fetchAll(PDO::FETCH_ASSOC);
                 
             ?>
-
-        </form>
-        
     </div>
 </body>
 </html>
