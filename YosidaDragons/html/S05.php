@@ -29,7 +29,7 @@ function es($data) {
     <link rel="stylesheet" href="../css/S01.css">
 </head>
 <body>
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method='post'>
         <input type="submit">
     </form>
 
@@ -45,7 +45,7 @@ function es($data) {
             $pdo = new PDO($dsn, $user, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "UPDATE books SET book_id=100200300 WHERE book_id=1";
+            $sql = "UPDATE books SET book_id=1 WHERE book_id=100200300";
             $stm = $pdo->prepare($sql);
             $stm->execute();
         }

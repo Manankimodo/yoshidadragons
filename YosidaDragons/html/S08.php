@@ -110,58 +110,42 @@ function es($data) {
         </form>
 
             <table class="Table">
-            <?php 
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // form method = postからデータを受け取る
-                $id = $_POST['id'];
-                $isbn = $_POST['isbn'];
-                $title = $_POST['title'];
-                $author_name = $_POST['author_name'];
-                $publisher = $_POST['publisher'];
-                $created_at = $_POST['created_at'];
-                $price = $_POST['price'];
-                $customer = $_POST['customer'];
-                echo $isbn,$title,$publisher;
-                try {
-                    echo マナト;
-                    // データベースに接続
-                    $pdo = new PDO($dsn, $user, $password);
-                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-                    // SQLクエリの準備と実行
-                    $sql = "UPDATE books SET book_id=:id WHERE book_id=1";
-                    $stm = $pdo->prepare($sql);
-                    $stm->bindParam(':id', $id, PDO::PARAM_INT);
-                    $stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
-                    $stm->bindParam(':title', $title, PDO::PARAM_STR);
-                    $stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
-                    $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
-                    $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
-                    $stm->bindParam(':price', $price, PDO::PARAM_INT);
-                    $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
-                    
-                    echo print_r($id,$isbn,$title,$author_name,$publisher,$created_at,$price,$customer);
-                    $stm->execute();
-            
-                    
-                } catch (Exception $e) {
-                    echo '<span>エラー</span><br>';
-                    echo $e->getMessage();
-                    exit();
-                }
-            }
-                
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        try {
+            //データベースに接続
+            $pdo = new PDO($dsn , $user , $password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                
-                // $sql = "SELECT DISTINCT B.*FROM books A, customers B, cust_subscribe C WHERE name=:name AND tel = :Tel";
-                // $stm->bindParam(':Tel', $Tel, PDO::PARAM_INT); // :Tel としてプレースホルダーを使用する
-                // $stm->bindParam(':name', $name, PDO::PARAM_INT); // :name としてプレースホルダーを使用する
+            
+                echo "if文実行中";
+                // SQLクエリの準備と実行
+                $sql = "UPDATE books SET book_id = 2 where book_id = 1";
+                echo "if文途中";
+                $stm = $pdo->prepare($sql);
+                $stm->execute();
+
                 // $stm = $pdo->prepare($sql);
-                // $stm->execute();
+                // $stm->bindParam(':id', $id, PDO::PARAM_INT);
+                // $stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
+                // $stm->bindParam(':title', $title, PDO::PARAM_STR);
+                // $stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
+                // $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
+                // $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
+                // $stm->bindParam(':price', $price, PDO::PARAM_INT);
+                // $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
                 
-                // $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-                
-            ?>
+                echo "if文終了";
+
+            
+            
+        } catch(Exception $e) {
+            echo '<span>エラー</span><br>';
+            echo $e->getMessage();
+            exit();
+        }
+    }
+    ?>
     </div>
 </body>
 </html>
