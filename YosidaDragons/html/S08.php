@@ -128,7 +128,7 @@ function es($data) {
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
                     // SQLクエリの準備と実行
-                    // $sql = "UPDATE books SET book_id=:id WHERE book_id=19107979";
+                    $sql = "UPDATE books SET book_id=:id WHERE book_id=1";
                     $stm = $pdo->prepare($sql);
                     $stm->bindParam(':id', $id, PDO::PARAM_STR);
                     $stm->bindParam(':isbn', $isbn, PDO::PARAM_STR);
