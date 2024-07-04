@@ -85,16 +85,6 @@ function es($data) {
                 </div>
 
             </div>
-
-            <!-- 戻る　OK　ボタン -->
-            <!-- <div class="flex">
-                <div id="back_button">
-                    <a class="Button" href="">戻る</a>
-                </div>
-                <div id="OK_button">
-                    <a class="Button" href="">OK</a>
-                </div>
-            </div> -->
             
             <div class="flex">
                 <!-- 戻るボタン -->
@@ -120,25 +110,22 @@ function es($data) {
             
                 echo "if文実行中";
                 // SQLクエリの準備と実行
-                $sql = "UPDATE books SET book_id = 2 where book_id = 1";
+                $sql = "UPDATE books SET book_id = :id where book_id = now :id";
                 echo "if文途中";
                 $stm = $pdo->prepare($sql);
-                $stm->execute();
-
-                // $stm = $pdo->prepare($sql);
-                // $stm->bindParam(':id', $id, PDO::PARAM_INT);
-                // $stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
-                // $stm->bindParam(':title', $title, PDO::PARAM_STR);
-                // $stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
-                // $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
-                // $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
-                // $stm->bindParam(':price', $price, PDO::PARAM_INT);
-                // $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
                 
+
+                $stm->bindParam(':id', $id, PDO::PARAM_INT);
+                 $stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
+                $stm->bindParam(':title', $title, PDO::PARAM_STR);
+                $stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
+                $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
+                $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
+                $stm->bindParam(':price', $price, PDO::PARAM_INT);
+                $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
+                $stm->execute();
                 echo "if文終了";
 
-            
-            
         } catch(Exception $e) {
             echo '<span>エラー</span><br>';
             echo $e->getMessage();
