@@ -76,7 +76,7 @@ function es($data) {
             <div class="flex" id="koudoku_button">
                 <input type="submit">
                 <a class="Button" href="">入力消去</a>
-                <a class="Button" href="S08.php">書籍情報変更</a>
+                <a class="Button" href="S08.php?isbn=<?php echo urlencode($isbn); ?>">書籍情報変更</a>
             </div>
         </form>
         <!-- テーブル -->
