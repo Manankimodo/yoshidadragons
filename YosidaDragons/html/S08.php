@@ -44,10 +44,12 @@ function es($data) {
                 </div>
 
                 <!-- ISBN -->
+                
                 <div class="flex speace">
                     <p>ISBN</p>
-                    <input value="43444271000" type="text" name="isbn" id="">
+                    <input value = <?php echo $isbn_0 ?> type="text" name="isbn" id="">
                 </div>
+                
 
                 <!-- タイトル -->
                 <div class="flex speace">
@@ -101,6 +103,7 @@ function es($data) {
 
             <table class="Table">
     <?php
+    $isbn_0 = $_POST['isbn'];//S07からisbnを取得
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             //データベースに接続
@@ -110,7 +113,7 @@ function es($data) {
             
                 echo "if文実行中";
                 // SQLクエリの準備と実行
-                $sql = "UPDATE books SET book_id = :id where book_id = 2";
+                $sql = "UPDATE books SET book_id = :id where book_id = 1";
                 echo "if文途中";
                 $stm = $pdo->prepare($sql);
                 
