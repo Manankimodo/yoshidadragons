@@ -108,30 +108,37 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
     <?php
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $id=$_POST['id'];
+        $title=$_POST['title'];
+        $author_name=$_POST['author_name'];
+        $publisher=$_POST['publisher'];
+        $stock=$_POST['stock'];
+        $price=$_POST['price'];
+
+
+
         
         try {
             //データベースに接続
             $pdo = new PDO($dsn , $user , $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            
-                echo "if文実行中";
                 // SQLクエリの準備と実行
-                echo "<p>$id</p>";
-                $sql = "UPDATE books SET book_id = :id WHERE isbn = 1000000000 ";
-                echo  "<p>$sql</p>";
-                echo "if文途中";
+                $sql = "UPDATE books SET book_id = :id , tytle = :title ,author_name = :author_name
+                 , publisher = :publisher , stock = :stock , price = :price WHERE isbn = :isbn_1 ";
                 $stm = $pdo->prepare($sql);
                 
 
                 $stm->bindParam(':id', $id, PDO::PARAM_INT);
                 //$stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
-                //$stm->bindParam(':isbn_1', $isbn_0, PDO::PARAM_INT);
-                //$stm->bindParam(':title', $title, PDO::PARAM_STR);
-                //$stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
-                // $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
+                $stm->bindParam(':isbn_1', $isbn_0, PDO::PARAM_INT);
+                $stm->bindParam(':title', $title, PDO::PARAM_STR);
+                $stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
+                $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
+                $stm->bindParam(':stock', $stock, PDO::PARAM_INT);
+
                 // $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
-                // $stm->bindParam(':price', $price, PDO::PARAM_INT);
+                 $stm->bindParam(':price', $price, PDO::PARAM_INT);
                 // $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
                 echo "if文execute前";
                 $stm->execute();
