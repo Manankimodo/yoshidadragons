@@ -110,7 +110,7 @@ function es($data) {
             
                 echo "if文実行中";
                 // SQLクエリの準備と実行
-                $sql = "UPDATE books SET book_id = :id where book_id = now :id";
+                $sql = "UPDATE books SET book_id = :id where book_id = 2";
                 echo "if文途中";
                 $stm = $pdo->prepare($sql);
                 
