@@ -117,21 +117,23 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
             
                 echo "if文実行中";
                 // SQLクエリの準備と実行
-                $sql = "UPDATE books SET book_id = :id WHERE :isbn_1 = 1000000000 ";
+                echo "<p>$id</p>";
+                $sql = "UPDATE books SET book_id = :id WHERE isbn = 1000000000 ";
+                echo  "<p>$sql</p>";
                 echo "if文途中";
                 $stm = $pdo->prepare($sql);
                 
 
                 $stm->bindParam(':id', $id, PDO::PARAM_INT);
                 //$stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
-                $stm->bindParam(':isbn_1', $isbn_0, PDO::PARAM_INT);
+                //$stm->bindParam(':isbn_1', $isbn_0, PDO::PARAM_INT);
                 //$stm->bindParam(':title', $title, PDO::PARAM_STR);
                 //$stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
                 // $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
                 // $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
                 // $stm->bindParam(':price', $price, PDO::PARAM_INT);
                 // $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
-
+                echo "if文execute前";
                 $stm->execute();
                 echo "if文終了";
 
