@@ -13,6 +13,8 @@ $dsn = "mysql:host={$host};dbname={$dbName};charset=utf8";
 function es($data) {
     return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
 }
+
+$isbn_0 = es($_POST['isbn']);//S07からisbnを取得
 ?>
 
 <!DOCTYPE html>
@@ -45,10 +47,11 @@ function es($data) {
 
                 <!-- ISBN -->
                 
-                <div class="flex speace">
+                <div class="flex speace">       
                     <p>ISBN</p>
-                    <input value = <?php echo $isbn_0 ?> type="text" name="isbn" id="">
+                    <input  value = "<?php echo $isbn_0; ?>"  type="text" name="isbn" id="">
                 </div>
+                
                 
 
                 <!-- タイトル -->
@@ -103,8 +106,9 @@ function es($data) {
 
             <table class="Table">
     <?php
-    $isbn_0 = $_POST['isbn'];//S07からisbnを取得
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
         try {
             //データベースに接続
             $pdo = new PDO($dsn , $user , $password);
@@ -113,19 +117,21 @@ function es($data) {
             
                 echo "if文実行中";
                 // SQLクエリの準備と実行
-                $sql = "UPDATE books SET book_id = :id where book_id = 1";
+                $sql = "UPDATE books SET book_id = :id WHERE :isbn_1 = 1000000000 ";
                 echo "if文途中";
                 $stm = $pdo->prepare($sql);
                 
 
                 $stm->bindParam(':id', $id, PDO::PARAM_INT);
-                 $stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
-                $stm->bindParam(':title', $title, PDO::PARAM_STR);
-                $stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
-                $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
-                $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
-                $stm->bindParam(':price', $price, PDO::PARAM_INT);
-                $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
+                //$stm->bindParam(':isbn', $isbn, PDO::PARAM_INT);
+                $stm->bindParam(':isbn_1', $isbn_0, PDO::PARAM_INT);
+                //$stm->bindParam(':title', $title, PDO::PARAM_STR);
+                //$stm->bindParam(':author_name', $author_name, PDO::PARAM_STR);
+                // $stm->bindParam(':publisher', $publisher, PDO::PARAM_STR);
+                // $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
+                // $stm->bindParam(':price', $price, PDO::PARAM_INT);
+                // $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
+
                 $stm->execute();
                 echo "if文終了";
 
