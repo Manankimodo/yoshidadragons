@@ -49,11 +49,9 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
                 
                 <div class="flex speace">       
                     <p>ISBN</p>
-                    <input  value = "<?php echo $isbn_0; ?>"  type="text" name="isbn" id="">
+                <input  value = "<?php echo $isbn_0; ?>"  type="text" name="isbn" id="" readonly>
                 </div>
                 
-                
-
                 <!-- タイトル -->
                 <div class="flex speace">
                     <p>タイトル</p>
@@ -74,8 +72,8 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
 
                 <!-- 出版日 -->
                 <div class="flex speace">
-                    <p>出版日</p>
-                    <input value="20xx/01/21" type="text" name="created_at" id="">
+                    <p>在庫</p>
+                    <input value="30" type="text" name="stock" id="">
                 </div>
 
                 <!-- 価格(円) -->
