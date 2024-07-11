@@ -100,16 +100,6 @@ function es($data) {
                     }
                 }
                     
-
-                    
-                    // $sql = "SELECT DISTINCT B.*FROM books A, customers B, cust_subscribe C WHERE name=:name AND tel = :Tel";
-                    // $stm->bindParam(':Tel', $Tel, PDO::PARAM_INT); // :Tel としてプレースホルダーを使用する
-                    // $stm->bindParam(':name', $name, PDO::PARAM_INT); // :name としてプレースホルダーを使用する
-                    // $stm = $pdo->prepare($sql);
-                    // $stm->execute();
-                    
-                    // $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-                    
                     echo "<thead><tr>";
                     echo "<th>ID</th><th>名前</th><th>カナ</th><th>電話番号</th><th>住所</th><th>クレジット</th><th>作成日</th><th>更新日</th>";
                     echo "</tr></thead>";

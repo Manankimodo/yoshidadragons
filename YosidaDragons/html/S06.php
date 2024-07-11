@@ -98,7 +98,6 @@ function es($data) {
                 $stm->execute();
                 
                 $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-             
                 echo "<thead><tr>";
                 echo "<th>ID</th><th>ISBN</th><th>タイトル</th><th>著者</th><th>出版</th><th>在庫</th><th>価格</th>";
                 echo "</tr></thead>";

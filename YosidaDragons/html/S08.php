@@ -123,7 +123,7 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
 
                 // SQLクエリの準備と実行
                 $sql = "UPDATE books SET book_id = :id , tytle = :title ,author_name = :author_name
-                 , publisher = :publisher , stock = :stock , price = :price WHERE isbn = :isbn_1 ";
+                , publisher = :publisher , stock = :stock , price = :price WHERE isbn = :isbn_1 ";
                 $stm = $pdo->prepare($sql);
                 
 
@@ -136,11 +136,9 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
                 $stm->bindParam(':stock', $stock, PDO::PARAM_INT);
 
                 // $stm->bindParam(':created_at', $created_at, PDO::PARAM_STR);
-                 $stm->bindParam(':price', $price, PDO::PARAM_INT);
+                $stm->bindParam(':price', $price, PDO::PARAM_INT);
                 // $stm->bindParam(':customer', $customer, PDO::PARAM_STR);
-                echo "if文execute前";
                 $stm->execute();
-                echo "if文終了";
 
         } catch(Exception $e) {
             echo '<span>エラー</span><br>';
