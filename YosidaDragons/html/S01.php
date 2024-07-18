@@ -13,9 +13,18 @@
 
     <!-- スタイル.css -->
     <link rel="stylesheet" href="../css/Style.css">
-    <link rel="stylesheet" href="../css/S01.css">
+    <link rel="stylesheet" href="../css/S01.css"> 
+    <style>
+        body {
+        background-image: url(login.jpg);
+        background-size: cover;
+        
+    }
+    </style>
 </head>
 <body>
+   
+    
     <div class="container">
 
         <div class="button_01">

@@ -2,6 +2,11 @@
     body
 */
 
+#flex{
+    position: relative;
+    left: 300px;
+}
+
 .flex { /* 要素の横並べ */
     display: flex;
 }
@@ -22,4 +27,22 @@ input[type="submit"] {
     border: solid black;
     margin-left: 500px;
     padding: 10px 20px;
+}
+
+
+
+body,html {
+    height: 100%;
+    margin: 0;
+    margin-left: 6%;
+    padding-top: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sinki{
+    position: relative;
+    width:20px;
+    padding-left: -2%;
 }

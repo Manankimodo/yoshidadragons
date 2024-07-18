@@ -2,23 +2,53 @@
     body
 */
 
-.button_01 a { /* 顧客・書籍管理ボタンの設定 */
-    border: solid black ;
-    display: inline-block;
+
+.button_01  { /* 顧客・書籍管理ボタンの設定 */
+    display: block;
+    position: relative;
+    top: 50px;
     text-align: center;
-    width: 400px;
-    padding: 20px 0 20px 0;
+    text-decoration: none;
     font-size: 40px;
+    width: 350px;
+    margin: auto;
+    padding: 2rem 4rem;
+    font-weight: bold;
+    background-image: linear-gradient(to top,#D8D9DB 0%,#fff 80%,#FDFDFD 100%);
+    border-radius: 100vh;
+    color: #333;
+    border: 1px solid #999;
+    text-shadow: 0 1px #fff;
+    /*box-shadow: 0 3px 2px 1px #fcfcfc,0,4px 6px #cecfd1,0 -2px 2px #cecfd1,0 -4px 2px #eee,inset 0 0 2px 2px #cecfd1;*/
+    transition: 0.5s;
 }
 .button_01:nth-child(2) { /* 書籍管理ボタンの設定 */
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.button_01:hover{
+    opacity: 0.5;
+}
 #button_NewUser a{ /* 新規登録ボタンの設定 */
-    border: solid black;
-    display: inline-block;
+    display: block;
+    font-size: 30px;
     text-align: center;
-    width: 160px;
-    padding: 10px 0 10px 0;
-    font-size: 20px;
+    text-decoration:none;
+    width: 250px;
+    margin:auto;
+    padding:2rem 2rem;
+    font-weight:bold;
+    border-bottom:7px solid #ff0000;
+    color:#fff;
+    border-radius: 100vh;
+    background: #ff0000;
+    writing-mode: horizontal-tb;
+    position: relative;
+    top: 200px;
+}
+#button_NewUser:hover{
+    margin-top: 6px;
+    border-bottom:1px solid #ff0000;
+    color: #fff;
+
 }
