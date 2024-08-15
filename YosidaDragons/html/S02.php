@@ -81,6 +81,8 @@ function es($data) {
 
 </head>
 <body>
+
+    <main id="contents">
     <div class="container">
         <?php
         try {
@@ -134,29 +136,32 @@ function es($data) {
             exit();
         }
         ?>
+
+        
+
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div class="flex">
-                <div class="text"><p>電話番号</p><p>(ハイフンなし)</p></div>
+                <div class="text"><p>  電話番号</p><p>(ハイフンなし)</p></div>
                 <div class="speace"><input type="text" name="tel"><p>例:08012345678</p></div>
             </div>
             
             <div class="flex">
-                <div class="text speace"><p>氏名</p></div>
+                <div class="text speace"><p>  氏名</p></div>
                 <div class="speace"><input type="text" name="name"><p>例:山田太郎</p></div>
             </div>
             
             <div class="flex">
-                <div class="text speace"><p>氏名(全角カナ)</p></div>
+                <div class="text speace"><p>  氏名(全角カナ)</p></div>
                 <div class="speace"><input type="text" name="kana"><p>例:ヤマダタロウ</p></div>
             </div>
             
             <div class="flex">
-                <div class="text speace"><p>クレジットカード番号</p></div>
+                <div class="text speace"><p>  クレジットカード番号</p></div>
                 <div class="speace"><input type="text" name="credit"><p>例:1234567890123456</p></div>
             </div>
             
             <div class="flex">
-                <div class="text speace"><p>住所</p></div>
+                <div class="text speace"><p>  住所</p></div>
                 <div class="speace"><input type="text" name="address"><p>例:大分県高崎山</p></div>
             </div>
 
@@ -165,10 +170,10 @@ function es($data) {
 
     </div>
     <style>
-        body {
+        /*body {
             background-image: url(touroku.jpg);
             background-size: cover;
-        }
+        }*/
         .touroku{
             font-size: 25pt;
             text-align: center;

@@ -1,25 +1,22 @@
-/* 
-    body
-*/
-
-#flex{
-    position: relative;
-    left: 300px;
+body {
+    background: #fbf9cc url(touroku.jpg);
 }
+
 
 .flex { /* 要素の横並べ */
     display: flex;
 }
 .text { /* テキストのサイズ */
-    width: 200px;
+    width: 300px;
 }
 div form .speace input { /* inputタグの設定 */
     border: solid black;
-    width: 400px;
+    width: 200px;
     border-radius: 4px;
     line-height: 20px;
 }
-.speace { /* スペースを開ける */
+
+.speace { 
     margin-bottom: 40px;
 }
 
@@ -46,3 +43,15 @@ body,html {
     width:20px;
     padding-left: -2%;
 }
+
+#contents {
+    width: 750px;
+    margin: 40px auto;
+    padding: 40px 80px;
+    border: 1px solid #f6bb9a;
+    background-color: #fff;
+    position: relative;
+    right: 100px;
+    top: -100px;
+}
+

@@ -17,13 +17,13 @@ html {
     width: 80%;
     margin: auto; margin-top: 20px;
     min-width: 800px;
-
 }
 
 /* 
     class="Button"
     推せるボタンに適用
 */
+
 .Button:hover {/* ボタンのアニメーション */
     background-color: gray;
     color: white;
