@@ -29,7 +29,7 @@ function es($data) {
     <link rel="stylesheet" href="../css/destry.css">
 
     <!-- スタイル.css -->
-    <link rel="stylesheet" href="../css/Style.css">
+    <!--<link rel="stylesheet" href="../css/Style.css">-->
     <link rel="stylesheet" href="../css/S07.css">
 </head>
 <body>
@@ -74,7 +74,7 @@ function es($data) {
                 書籍情報変更 → S08(書籍情報変更)
             -->
             <div class="flex" id="koudoku_button">
-                <input type="submit">
+                <input type="submit" value="検索" class="button">
                 <a class="Button" href="">入力消去</a>
                 <input type="submit" value="顧客情報変更" class="Button" formaction="S08.php">
             </div>
@@ -133,6 +133,18 @@ function es($data) {
                 echo "</tbody>"; 
             ?>
         </table>
+        <style>
+        .Button{
+            border:  solid black ;
+            padding: 5px 20px;
+            font-size: 18px;    
+        }
+        .button{
+            border:  solid black ;
+            padding: 5px 20px;
+            font-size: 18px;    
+        }
+        </style>
     </div>
         <!-- 戻るボタン -->
         <div id="back_button">

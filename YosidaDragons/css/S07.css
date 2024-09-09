@@ -1,6 +1,17 @@
-/* 
-    body
-*/
+body{
+    overflow-x: hidden;
+    background: #fbf9cc url(touroku.jpeg);
+}
+
+.container {
+    /* background-color: bisque; */
+    width: 80%;
+    margin: none; margin-top: none;
+    min-width: 800px;
+    position: relative;
+    top:150px;
+    left: 28%;
+}
 
 .flex { /* 横並べ */
     display: flex;
@@ -18,7 +29,9 @@
     line-height: 20px;
 }
 #koudoku_button a:nth-child(2), #koudoku_button a:nth-child(3) { /* 64行目divタグの入力消去書・籍情報変更の設定 */
+    padding: 5px 20px;
     margin-left: 50px;
+    margin-right: 50px;
 }
 #koudoku_button a { /* 検索　入力消去　証跡情報変更の設定 */
     border: solid black;

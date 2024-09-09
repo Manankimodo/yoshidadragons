@@ -65,7 +65,7 @@ function es($data) {
             顧客管理情報 → S04(顧客情報変更)
         -->
         <div class="flex speace" id="kensaku_button">
-            <input type="submit" value="検索">
+            <input type="submit" class="ken" value="検索">
             <a class="Button" href="">入力消去</a>
             <a class="Button" href="S04.php">顧客管理情報</a>
         </div>
@@ -126,6 +126,13 @@ function es($data) {
                 ?>
             </table>
         </div>
+        <style>
+        .ken{
+            border:  solid black ;
+            padding: 5px 20px;
+            font-size: 18px;    
+        }
+        </style>
 
         <!-- 戻るボタン -->
         <div id="back_button">

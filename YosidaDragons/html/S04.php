@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/destry.css">
 
     <!-- スタイル.css -->
-    <link rel="stylesheet" href="../css/Style.css">
+    <!--<link rel="stylesheet" href="../css/Style.css">-->
     <link rel="stylesheet" href="../css/S04.css">
 
 </head>
