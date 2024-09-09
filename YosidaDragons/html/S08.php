@@ -31,7 +31,7 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
     <link rel="stylesheet" href="../css/destry.css">
 
     <!-- スタイル.css -->
-    <link rel="stylesheet" href="../css/Style.css">
+    <!--<link rel="stylesheet" href="../css/Style.css">-->
     <link rel="stylesheet" href="../css/S08.css">
 </head>
 <body>
@@ -97,7 +97,7 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
 
                 <!-- OKボタン -->
                 <div id="OK_button">
-                    <input type="submit" value="更新">
+                    <input type="submit" class="kousin"value="更新">
                 </div>
             </div>
         </form>
@@ -147,6 +147,13 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
         }
     }
     ?>
+    <style>
+        .kousin{
+            border:  solid black ;
+            padding: 5px 20px;
+            font-size: 18px;
+        }
+    </style>
     </div>
 </body>
 </html>

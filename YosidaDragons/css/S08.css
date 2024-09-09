@@ -1,6 +1,9 @@
-/* 
-    body
-*/
+
+body{
+    overflow-x: hidden;
+    background: #fbf9cc url(touroku.jpeg);
+}
+
 
 .flex { /* 横並び */
     display: flex;
@@ -10,12 +13,23 @@
 }
 .flex input { /* inputの設定 */
     border: solid black;
-    width: 400px;
+
     border-radius: 4px;
     line-height: 20px;
+    padding: auto;
 }
 div .speace { /* スペース設定 */
     margin-bottom: 30px;
+}
+
+.container {
+    /* background-color: bisque; */
+    width: 80%;
+    margin: none; margin-top: none;
+    min-width: 800px;
+    position: relative;
+    top:200px;
+    left: 43%;
 }
 
 /* #back_button, #OK_button {
@@ -37,5 +51,9 @@ div .speace { /* スペース設定 */
     border: solid black;
     padding: 10px 20px;
     font-size: 18px;
-    margin-left: 450px;
+    margin-left: 50px;
+}
+
+#back_button a:nth-child(2), #OK_button input { /* 戻るボタンと更新ボタン */
+    margin-left: 50px;
 }
