@@ -1,6 +1,9 @@
-/* 
-    body
-*/
+
+body{
+    overflow-x: hidden;
+    background: #fbf9cc url(touroku.jpeg);
+}
+
 
 .flex { /* 横並べ */
     display: flex;
@@ -13,6 +16,16 @@
 }
 .text { /* textサイズ設定 */
     width: 200px;
+}
+
+.container {
+    /* background-color: bisque; */
+    width: 80%;
+    margin: none; margin-top: none;
+    min-width: 800px;
+    position: relative;
+    top:200px;
+    left: 30%;
 }
 
 .speace { /* 幅調整 */
@@ -53,7 +66,7 @@ table tr th, tr td { /* 表のマス目表示 */
     -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.2);
     transition: 0.5s;
     position: relative;
-    top:250px;
+    top:50px;
     right: 300px;
 }
 #back_button a:hover{
