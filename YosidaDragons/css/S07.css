@@ -56,3 +56,8 @@ table tr th, tr td { /* 表のマス目表示 */
     margin-top: 20px;
     font-size: 18px;
 }
+
+.Button { /* ボタンのアニメーション02 */
+    transition: 0.3s;
+    height: 30px;
+}

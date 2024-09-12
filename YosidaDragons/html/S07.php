@@ -78,6 +78,7 @@ function es($data) {
                 <a class="Button" href="">入力消去</a>
                 <input type="submit" value="顧客情報変更" class="Button" formaction="S08.php">
             </div>
+            <br>
         </form>
         <!-- テーブル -->
         <div class="speace">

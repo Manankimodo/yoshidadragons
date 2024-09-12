@@ -31,4 +31,5 @@ html {
 }
 .Button { /* ボタンのアニメーション02 */
     transition: 0.3s;
+    height: 10px;
 }
