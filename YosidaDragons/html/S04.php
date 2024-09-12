@@ -15,6 +15,48 @@
     <!--<link rel="stylesheet" href="../css/Style.css">-->
     <link rel="stylesheet" href="../css/S04.css">
 
+    <?php
+        $user = 'root';
+        $password = '';
+        // 用するデータベース
+        $dbName = 'test';
+        $host = 'localhost:3306';
+        // MySQLのDSN文字列
+        $dsn = "mysql:host={$host};dbname={$dbName};charset=utf8";
+
+        // HTMLエスケープ用の関数
+        function es($data) {
+            return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+        }
+
+        $tel = es($_POST['tel']);
+        $kana = es($_POST['name']); 
+
+
+        $cust_id = '';
+        $name = '';
+        $address = '';
+        try {
+            $pdo = new PDO($dsn, $user, $password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // SQLクエリの準備
+            $sql = "SELECT * FROM customers WHERE tel = :tel and kana = :kana";
+            $stm = $pdo->prepare($sql);
+            $stm->bindParam(':tel', $tel, PDO::PARAM_STR);
+            $stm->bindParam(':kana', $kana, PDO::PARAM_STR);
+            $stm->execute();
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+            if ($result) {
+                $cust_id = es($result['cust_id']);
+                $name = es($result['name']);
+                $address = es($result['address']);
+            }
+
+        } catch(Exception $e) {
+            echo 'エラー' . $e->getMessage();
+        }
+    ?>
+
 </head>
 <body>
     <div class="container">
@@ -25,7 +67,7 @@
             <div class="flex speace">
                 <p>ID</p>
                 <div>
-                    <input value="3" type="text" name="cust_id">
+                    <input value="<?php echo $cust_id ?>" type="text" name="cust_id">
                 </div>
             </div>
 
@@ -36,7 +78,7 @@
                     <p>氏名</p>
                 </div>
                 <div>
-                    <input value="山田太郎" type="text" name="name">
+                    <input value="<?php echo $name ?>" type="text" name="name">
                 </div>
             </div>
 
@@ -46,7 +88,7 @@
                     <p>カナ</p>
                 </div>
                 <div>
-                    <input value="ヤマダタロウ" type="text" name="kana">
+                    <input value="<?php echo $kana ?>" type="text" name="kana">
                 </div>
             </div>
 
@@ -56,7 +98,7 @@
                     <p>電話番号</p>
                 </div>
                 <div>
-                    <input value="08012345678" type="text" name="phonnumber">
+                    <input value="<?php echo $tel ?>" type="text" name="phonnumber">
                 </div>
             </div>
 
@@ -66,7 +108,7 @@
                     <p>住所</p>
                 </div>
                 <div>
-                    <input value="東京都新宿区×××××××××××" type="text" name="address">
+                    <input value="<?php echo $address ?>" type="text" name="address">
                 </div>
             </div>
 
@@ -83,7 +125,7 @@
         </form>
 
         <!-- テーブル -->
-        <table class="speace">
+        <!-- <table class="speace">
             <tr>
                 <th>/</th>
                 <th>ID</th>
@@ -124,7 +166,7 @@
                 <td>石野古味</td>
                 <td>KY社</td>
             </tr>
-        </table>
+        </table> -->
 
         <!-- 戻るボタン -->
         <div id="back_button">
