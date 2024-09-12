@@ -15,6 +15,25 @@ function es($data) {
 }
 
 $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
+try{
+    $pdo = new PDO($dsn , $user , $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stm->bindParam(':isbn_1', $isbn_0, PDO::PARAM_INT);
+    // $sql = "SELECT * FROM books WHERE isbn=:isbn_1";
+    $stm = $pdo->prepare($sql);
+    $stm->execute();
+    $result=$stm->fetchAll(PDO::FETCH_ASSOC);
+} catch(Expection $e){
+    echo 'エラー';
+    echo $e->getMessage();
+    exit();
+}
+
+foreach ($result as $row){
+    echo es($row['book_id']);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +61,7 @@ $isbn_0 = es($_POST['isbn']);//S07からisbnを取得
                 <!-- ID -->
                 <div class="flex speace">
                     <p>ID</p>
-                    <input value="1" type="text" name="id" id="">
+                    <input value="" type="text" name="id" id="">
                 </div>
 
                 <!-- ISBN -->
