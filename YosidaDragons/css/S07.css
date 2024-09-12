@@ -40,6 +40,7 @@ body{
     margin-bottom: 20px;
     margin-left: 200px;
     position: relative;
+    left: 60px;
     top:-40px;
 }
 
@@ -63,5 +64,21 @@ table tr th, tr td { /* 表のマス目表示 */
 
 .Button { /* ボタンのアニメーション02 */
     transition: 0.3s;
+    position: relative;
+    top:-34px;
+    left: 100px;
+}
+
+.Button1 { /* ボタンのアニメーション02 */
+    transition: 0.3s;
     height: 40px;
+}
+
+.Button2{ /* ボタンのアニメーション02 */
+    transition: 0.3s;
+    position: relative;
+    left: 280px;
+    border: solid black;
+    position: absolute;
+    padding: 10px 20px;
 }

@@ -67,7 +67,7 @@ function es($data) {
         <div class="flex speace" id="kensaku_button">
             <input type="submit" class="ken" value="検索">
             <a class="Button" href="">入力消去</a>
-            <a class="Button" href="S04.php">顧客管理情報</a>
+            <a type="submit" class="Button" href="S04.php">顧客管理情報</a>
         </div>
         </form>
 
