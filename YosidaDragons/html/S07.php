@@ -73,8 +73,8 @@ function es($data) {
                 入力消去
                 書籍情報変更 → S08(書籍情報変更)
             -->
+            <input type="submit" value="検索" class="button">
             <div class="flex" id="koudoku_button">
-                <input type="submit" value="検索" class="button">
                 <a class="Button" href="">入力消去</a>
                 <input type="submit" value="顧客情報変更" class="Button" formaction="S08.php">
             </div>
