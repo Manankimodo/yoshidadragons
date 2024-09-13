@@ -112,8 +112,6 @@ try {
                     <input type="submit" class="kousin" value="更新">
                 </div>
             </div>
-
-
         </form>
     </div>
 </body>
