@@ -108,11 +108,12 @@ try {
                 <div id="back_button">
                     <a class="Button" href="S07.php">戻る</a>
                 </div>
-
                 <div id="OK_button">
                     <input type="submit" class="kousin" value="更新">
                 </div>
             </div>
+
+
         </form>
     </div>
 </body>

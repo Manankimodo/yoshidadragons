@@ -166,6 +166,10 @@ function es($data) {
             </div>
 
             <div class="touroku_button"><input type="submit" value="登録" class="touroku"></div>
+            <!-- 戻るボタン -->
+            <div id="back_button">
+                <a class="Button" href="S01.php">戻る</a>
+            </div>
         </form>
 
     </div>
